@@ -1,0 +1,33 @@
+<h2>Student CRUD</h2>
+<table cellpadding="10" border="1">
+    <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let student of students">
+        <td>{{student.rollNo}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.status}}</td>
+        <td>
+            <button>Edit</button>
+            &nbsp;
+            <button>Delete</button>
+        </td>
+    </tr>
+</table>
+
+<button (click)="showHideNewForm()">Create New</button>
+<br>
+
+<div *ngIf="showNewForm">
+    <h1>New Student Form</h1>
+    <input type="text" placeholder="Roll No" [(ngModel)]="newStudentRollNo">
+    <br>
+    <input type="text" placeholder="Name" [(ngModel)]="newStudentName">
+    <br>
+    <input type="text" placeholder="Status" [(ngModel)]="newStudentStatus">
+    <br>
+    <button (click)="createNewStudent()">Submit</button>
+</div>
