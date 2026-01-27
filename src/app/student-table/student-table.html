@@ -11,9 +11,9 @@
         <td>{{student.name}}</td>
         <td>{{student.status}}</td>
         <td>
-            <button>Edit</button>
+            <button (click)="editStudent(student, students.indexOf(student))">Edit</button>
             &nbsp;
-            <button>Delete</button>
+            <button (click)="deleteStudent(student.rollNo)">Delete</button>
         </td>
     </tr>
 </table>

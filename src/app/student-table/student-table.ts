@@ -38,4 +38,13 @@ export class StudentTable {
 
     this.showNewForm = false;
   }
-}
+  
+  deleteStudent(rollNo: number) {
+    this.students = this.students.filter(student => student.rollNo !== rollNo);
+  }
+  editStudent(student: any, index: number) {
+    const editedName = prompt("Edit Name:", student.name);
+    const editedStatus = prompt("Edit Status:", student.status);
+    this.students[index] = { ...student, name: editedName, status: editedStatus };
+  }
+  }
